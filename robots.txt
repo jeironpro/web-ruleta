@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://webruleta.com/sitemap.xml
+
+Sitemap: https://[tu-usuario].github.io/web-ruleta/sitemap.xml
