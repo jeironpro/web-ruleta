@@ -55,6 +55,8 @@ export class Roulette {
 		const cy = size / 2;
 		const radius = size / 2 - 4;
 		const count = this.segments.length;
+		const scale = this._scale || 1;
+		const cssRadius = (this._size || size) / 2 - 4;
 
 		ctx.clearRect(0, 0, size, size);
 
@@ -97,7 +99,8 @@ export class Roulette {
 			ctx.rotate(startAngle + arcSize / 2);
 			ctx.textAlign = 'right';
 			ctx.fillStyle = '#ffffff';
-			ctx.font = `bold ${Math.max(11, Math.min(16, radius / count * 1.2))}px Inter, sans-serif`;
+			const fontSize = Math.max(11, Math.min(16, cssRadius / count * 1.2));
+			ctx.font = `bold ${Math.round(fontSize * scale)}px Inter, sans-serif`;
 			ctx.shadowColor = 'rgba(0,0,0,0.5)';
 			ctx.shadowBlur = 2;
 
